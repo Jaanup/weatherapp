@@ -1,0 +1,15 @@
+version: "3"
+services:
+ webapp:
+   build: ./frontend
+   ports:
+     - "8000:8000"
+   links:
+     - "db:backend"  
+ db:
+   build: ./backend
+   image: weatherapp_backend
+   ports:
+     - "9000:9000" 
+
+
